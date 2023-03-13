@@ -37,8 +37,8 @@ require 'cek.php';
                     DataTable <br> <br>
 
                     <!-- Button to Open the Modal -->
-                    <a href="export.php" class="btn btn-info">Print</a>
-                    <a href="printall.php" target="_blank" class="btn btn-info">Print Semua</a>
+                    <a href="exportfin.php" class="btn btn-info">Print</a>
+                    <a href="printallfin.php" target="_blank" class="btn btn-info">Print Semua</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
