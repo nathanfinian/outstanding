@@ -14,6 +14,7 @@ require 'cek.php';
         <meta name="author" content="" />
         <title>Outstanding</title>
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel = "icon" href = "assets/img/mca.png" type = "image/x-icon">
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
@@ -28,7 +29,7 @@ require 'cek.php';
         <div class="container-fluid">
             <h1 class="mt-4">Dashboard</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Tabel Selesai</li>
+                <li class="breadcrumb-item active">Tagihan Selesai</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-header">

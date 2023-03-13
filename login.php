@@ -37,9 +37,10 @@ if(!isset($_SESSION['log'])){
         <meta name="author" content="" />
         <title>Outstanding</title>
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel = "icon" href = "assets/img/mca.png" type = "image/x-icon">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body>
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
