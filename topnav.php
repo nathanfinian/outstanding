@@ -23,13 +23,13 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="index.php">Tabel Utama</a>
+            <a class="nav-link" href="index.php">Tabel GH</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tablesfin.php">Tagihan Selesai</a>
+            <a class="nav-link" href="tablesfin.php">Tagihan GH Selesai</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tables.php">Edit Tagihan</a>
+            <a class="nav-link" href="tables.php">Edit Tagihan GH</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="panduan.php">Panduan</a>
