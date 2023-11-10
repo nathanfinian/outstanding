@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Outstanding</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel = "icon" href = "assets/img/icons-mca.png" type = "image/x-icon">
+
+        <link href="DataTables/datatables.min.css" rel="stylesheet">
+ 
+        <script src="DataTables/datatables.min.js"></script>
+    </head>
+<body class="sb-nav-fixed">
 <nav class="navbar navbar-expand-sm bg-dark sticky-top navbar-dark">
     <a class="navbar-brand" href="index.php">Outstanding MCA</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
