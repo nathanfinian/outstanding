@@ -42,6 +42,7 @@
                         <option value="Sriwijaya">Sriwijaya</option>
                         <option value="Super Jet">Super Jet</option>
                         <option value="Wings Air">Wings Air</option>
+                        <option value="Angkasa Super">PT Angkasa Super Service</option>
                     </select> <br> <br>
 
                     <!-- <input type="text" name="pembukuan" placeholder="Pembukuan" class="form-control" required> <br> -->
