@@ -37,7 +37,7 @@ if(!isset($_SESSION['log'])){
         <meta name="author" content="" />
         <title>Outstanding</title>
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel = "icon" href = "assets/img/mca.png" type = "image/x-icon">
+        <link rel = "icon" href = "assets/img/icons-mca.png" type = "image/x-icon">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -47,7 +47,7 @@ if(!isset($_SESSION['log'])){
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card shadow-lg border-1 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
                                         <form method="post">

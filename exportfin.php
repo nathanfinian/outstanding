@@ -14,7 +14,7 @@ require 'cek.php';
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-        <link rel = "icon" href = "assets/img/mca.png" type = "image/x-icon">
+        <link rel = "icon" href = "assets/img/icons-mca.png" type = "image/x-icon">
         <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     </head>
@@ -223,5 +223,6 @@ require 'cek.php';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
         <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
+
     </body>
 </html>
