@@ -129,7 +129,18 @@
                 $(api.column(9).footer()).html(totalreal.toLocaleString());
                 $(api.column(10).footer()).html(totalcicil.toLocaleString());
                 $(api.column(11).footer()).html(totalsis.toLocaleString());
-            },
+            }
+        });
+        $('#tableTable').DataTable({
+            pageLength: 50, // Set the default number of rows to 50
+            footerCallback: function (row, data, start, end, display) {
+                var api = this.api();
+    
+                // Remove the formatting to get integer data for summation
+                var intVal = function (i) {
+                    return typeof i === 'string' ? i.replace(/[\$,]/g, '') * 1 : typeof i === 'number' ? i : 0;
+                };
+            }
         });
     });
 </script>

@@ -26,164 +26,156 @@ include 'topnav.php';
                 <a href="printall.php" target="_blank" class="btn btn-info">Print Semua</a>
             </div>
             <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-sm" id="tableTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Airlines</th>
+                                <th>Pembukuan</th>
+                                <th>Type</th>
+                                <th>Tagihan</th>
+                                <th>PPN</th>
+                                <th>Konsesi</th>
+                                <th>PPH</th>
+                                <th>Cicilan</th>
+                                <th>Edit</th>
+                                <th>Selesai</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+
+                            $retrieveDat = mysqli_query($conn, "select * from outstand where status = false");
+
+                            while ($data = mysqli_fetch_array($retrieveDat)){
+                                //$i = 1;
+                                $tanggal = $data['tanggal'];
+                                $airlines = $data['airline'];
+                                $pembukuan = $data['pembukuan'];
+                                $tipe = $data['tipe'];
+                                $tagihan = $data['tagihan'];
+                                $ppn = $data['ppn'];
+                                $konsesi = $data['konsesi'];
+                                $pph = $data['pph'];
+                                $cicilan = $data['cicilan'];
+                                $idb = $data['idinput'];
+                        ?>
                         <tr>
-                            <th>Tanggal</th>
-                            <th>Airlines</th>
-                            <th>Pembukuan</th>
-                            <th>Type</th>
-                            <th>Tagihan</th>
-                            <th>PPN</th>
-                            <th>Konsesi</th>
-                            <th>PPH</th>
-                            <th>Cicilan</th>
-                            <th>Edit</th>
-                            <th>Selesai</th>
+                            <td><?=$tanggal; ?></td>
+                            <td><?=$airlines; ?></td>
+                            <td><?=$pembukuan; ?></td>
+                            <td><?=$tipe; ?></td>
+                            <td><?=number_format($tagihan); ?></td>
+                            <td><?=number_format($ppn,2); ?></td>
+                            <td><?=number_format($konsesi,2); ?></td>
+                            <td><?=number_format($pph,2); ?></td>
+                            <td><?=number_format($cicilan); ?></td>
+                            <td>
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idb;?>">
+                                    Edit
+                                </button>
+                                <input type="hidden" name="deleteitem" value="<?=$idb;?>">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idb;?>">
+                                    Hapus
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#finish<?=$idb;?>">
+                                    Selesai
+                                </button>
+                                <input type="hidden" name="finishitem" value="<?=$idb;?>">
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-
-                        $retrieveDat = mysqli_query($conn, "select * from outstand where status = false");
-
-                        while ($data = mysqli_fetch_array($retrieveDat)){
-                            //$i = 1;
-                            $tanggal = $data['tanggal'];
-                            $airlines = $data['airline'];
-                            $pembukuan = $data['pembukuan'];
-                            $tipe = $data['tipe'];
-                            $tagihan = $data['tagihan'];
-                            $ppn = $data['ppn'];
-                            $konsesi = $data['konsesi'];
-                            $pph = $data['pph'];
-                            $cicilan = $data['cicilan'];
-                            $idb = $data['idinput'];
-                    ?>
-                    <tr>
-                        <td><?=$tanggal; ?></td>
-                        <td><?=$airlines; ?></td>
-                        <td><?=$pembukuan; ?></td>
-                        <td><?=$tipe; ?></td>
-                        <td><?=number_format($tagihan); ?></td>
-                        <td><?=number_format($ppn,2); ?></td>
-                        <td><?=number_format($konsesi,2); ?></td>
-                        <td><?=number_format($pph,2); ?></td>
-                        <td><?=number_format($cicilan); ?></td>
-                        <td>
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?=$idb;?>">
-                                Edit
-                            </button>
-                            <input type="hidden" name="deleteitem" value="<?=$idb;?>">
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idb;?>">
-                                Hapus
-                            </button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#finish<?=$idb;?>">
-                                Selesai
-                            </button>
-                            <input type="hidden" name="finishitem" value="<?=$idb;?>">
-                        </td>
-                    </tr>
-                    <!-- Edit Modal -->                                           
-                    <div class="modal fade" id="edit<?=$idb;?>">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Edit Data</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times; </button>
-                                </div>
-                                <!-- Modal body -->
-                                <form method="post">
-                                    <div class="modal-body">
-
-                                        <input type="date" name="tanggal" value="<?=$tanggal; ?>" class="form-control" required> <br>
-
-                                        <input type="text" name="airline" value="<?=$airlines;?>" class="form-control" required> <br>
-                                        <input type="text" name="pembukuan" value="<?=$pembukuan;?>" class="form-control" required> <br>
-                                        <input type="text" name="tipe" value="<?=$tipe;?>" class="form-control" required> <br>
-
-                                        <input type="number" name="tagihan" value="<?=$tagihan;?>" placeholder="Tagihan" class="form-control" required> <br>
-                                        <input type="number" step=".1" name="ppn" value="<?=$ppn;?>" placeholder="PPN (%)" class="form-control" required> <br>
-                                        <input type="number" step=".1" name="konsesi" value="<?=$konsesi;?>" placeholder="Konsesi (%)" class="form-control" required> <br>
-                                        <input type="number" step=".1" name="pph" value="<?=$pph;?>" placeholder="PPH (%)" class="form-control" required> <br>
-                                        <input type="number" name="cicilan" value="<?=$cicilan;?>" placeholder="Cicilan" class="form-control" required> <br>
-
-                                        <input type="hidden" name="idb" value="<?=$idb;?>">
-                                        <button type="submit" class="btn btn-primary" name="updatedata">Simpan</button>
+                        <!-- Edit Modal -->                                           
+                        <div class="modal fade" id="edit<?=$idb;?>">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Edit Data</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times; </button>
                                     </div>
-                                </form>
+                                    <!-- Modal body -->
+                                    <form method="post">
+                                        <div class="modal-body">
+
+                                            <input type="date" name="tanggal" value="<?=$tanggal; ?>" class="form-control" required> <br>
+
+                                            <input type="text" name="airline" value="<?=$airlines;?>" class="form-control" required> <br>
+                                            <input type="text" name="pembukuan" value="<?=$pembukuan;?>" class="form-control" required> <br>
+                                            <input type="text" name="tipe" value="<?=$tipe;?>" class="form-control" required> <br>
+
+                                            <input type="number" name="tagihan" value="<?=$tagihan;?>" placeholder="Tagihan" class="form-control" required> <br>
+                                            <input type="number" step=".1" name="ppn" value="<?=$ppn;?>" placeholder="PPN (%)" class="form-control" required> <br>
+                                            <input type="number" step=".1" name="konsesi" value="<?=$konsesi;?>" placeholder="Konsesi (%)" class="form-control" required> <br>
+                                            <input type="number" step=".1" name="pph" value="<?=$pph;?>" placeholder="PPH (%)" class="form-control" required> <br>
+                                            <input type="number" name="cicilan" value="<?=$cicilan;?>" placeholder="Cicilan" class="form-control" required> <br>
+
+                                            <input type="hidden" name="idb" value="<?=$idb;?>">
+                                            <button type="submit" class="btn btn-primary" name="updatedata">Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Delete Modal -->                                           
-                    <div class="modal fade" id="delete<?=$idb;?>">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Menghapus Data</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times; </button>
-                                </div>
-                                <!-- Modal body -->
-                                <form method="post">
-                                    <div class="modal-body">
-
-                                        Menghapus tagihan <?=$tanggal; ?> milik <?=$airlines;?> untuk pembukuan <?=$pembukuan;?>? <br> <br>
-
-                                        <input type="hidden" name="idb" value="<?=$idb;?>">
-                                        <button type="submit" class="btn btn-danger" name="deletedata">Delete</button>
+                        <!-- Delete Modal -->                                           
+                        <div class="modal fade" id="delete<?=$idb;?>">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Menghapus Data</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times; </button>
                                     </div>
-                                </form>
+                                    <!-- Modal body -->
+                                    <form method="post">
+                                        <div class="modal-body">
+
+                                            Menghapus tagihan <?=$tanggal; ?> milik <?=$airlines;?> untuk pembukuan <?=$pembukuan;?>? <br> <br>
+
+                                            <input type="hidden" name="idb" value="<?=$idb;?>">
+                                            <button type="submit" class="btn btn-danger" name="deletedata">Delete</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Selesai Modal -->                                           
-                    <div class="modal fade" id="finish<?=$idb;?>">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Selesaikan Data</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times; </button>
-                                </div>
-                                <!-- Modal body -->
-                                <form method="post">
-                                    <div class="modal-body">
-
-                                        Menyelesaikan tagihan <?=$tanggal; ?> milik <?=$airlines;?> untuk pembukuan 
-                                        <?=$pembukuan;?>? <br> <br>
-
-                                        <input type="hidden" name="idb" value="<?=$idb;?>">
-                                        <button type="submit" class="btn btn-danger" name="finishdata">Selesai</button>
+                        <!-- Selesai Modal -->                                           
+                        <div class="modal fade" id="finish<?=$idb;?>">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Selesaikan Data</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times; </button>
                                     </div>
-                                </form>
+                                    <!-- Modal body -->
+                                    <form method="post">
+                                        <div class="modal-body">
+
+                                            Menyelesaikan tagihan <?=$tanggal; ?> milik <?=$airlines;?> untuk pembukuan 
+                                            <?=$pembukuan;?>? <br> <br>
+
+                                            <input type="hidden" name="idb" value="<?=$idb;?>">
+                                            <button type="submit" class="btn btn-danger" name="finishdata">Selesai</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php
-                        };
-                    ?>
-                    </tbody>
-                </table>
-            </div>
+                        <?php
+                            };
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-    <script src="assets/demo/datatables-demo.js"></script>
 </body>
 
 <?php
