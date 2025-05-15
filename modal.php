@@ -43,6 +43,15 @@
                         <option value="Super Jet">Super Jet</option>
                         <option value="Wings Air">Wings Air</option>
                         <option value="Angkasa Super">PT Angkasa Super Service</option>
+                        <option value="PT Transnusa Aviation Mandiri ">PT Transnusa Aviation Mandiri </option>
+                        <option value="PT Sayap Garuda Indah">PT Sayap Garuda Indah</option>
+                        <option value="PT Indonesia Air">PT Indonesia Air</option>
+                        <option value="PT Integrasi Aviasi Solusi">PT Integrasi Aviasi Solusi</option>
+                        <option value="PT Wira Adirajasa Dirgantara">PT Wira Adirajasa Dirgantara</option>
+                        <option value="PT ERSA EASTERN AVIATION">PT ERSA EASTERN AVIATION</option>
+                        <option value="PT JURAGAN 99 AVIASI">PT JURAGAN 99 AVIASI</option>
+                        <option value="PT KARISMA BAHANA AVIASI">PT KARISMA BAHANA AVIASI</option>
+                        <option value="PT PELITA AIR SERVICE">PT PELITA AIR SERVICE</option>
                     </select> <br> <br>
 
                     <!-- <input type="text" name="pembukuan" placeholder="Pembukuan" class="form-control" required> <br> -->
@@ -54,7 +63,9 @@
                         <option value="MCA CARTER">MCA CARTER</option>
                         <option value="MCA PKY">MCA PKY</option>
                         <option value="MCA PNK">MCA PNK</option>
+                        <option value="MCA SKJ">MCA SKJ</option>
                         <option value="Mulio Sampit">Mulio Sampit</option>
+                        <option value="IAS">IAS</option>
                     </select> <br> <br>
 
                     <label for="type">Tipe</label> <br>
@@ -64,6 +75,10 @@
                         <option value="Ground Handling">Ground Handling</option>
                         <option value="GSE">GSE</option>
                         <option value="Gudang">Gudang</option>
+                        <option value="GH RON">GH Round</option>
+                        <option value="Profit Sharing">Profit Sharing</option>
+                        <option value="Pajak (PPH 23)">Pajak (PPH 23)</option>
+                        <option value="Revenue Sharing">Revenue Sharing</option>
                     </select> <br> <br>
 
                     <input type="number" name="tagihan" placeholder="Tagihan" class="form-control" required> <br>

@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Outstanding</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <link rel = "icon" href = "assets/img/icons-mca.png" type = "image/x-icon">
-
-        <link href="DataTables/datatables.min.css" rel="stylesheet">
- 
-        <script src="DataTables/datatables.min.js"></script>
-    </head>
-<body class="sb-nav-fixed">
 <nav class="navbar navbar-expand-sm bg-dark sticky-top navbar-dark">
     <a class="navbar-brand" href="index.php">Outstanding MCA</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -23,13 +6,13 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="index.php">Tabel GH</a>
+            <a class="nav-link" href="index.php">Tabel Utama</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tablesfin.php">Tagihan GH Selesai</a>
+            <a class="nav-link" href="tablesfin.php">Tagihan Selesai</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tables.php">Edit Tagihan GH</a>
+            <a class="nav-link" href="tables.php">Edit Tagihan</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="panduan.php">Panduan</a>
@@ -129,7 +112,7 @@
                 $(api.column(9).footer()).html(totalreal.toLocaleString());
                 $(api.column(10).footer()).html(totalcicil.toLocaleString());
                 $(api.column(11).footer()).html(totalsis.toLocaleString());
-            }
+            },
         });
         $('#tableTable').DataTable({
             pageLength: 50, // Set the default number of rows to 50
@@ -143,4 +126,5 @@
             }
         });
     });
+    
 </script>
